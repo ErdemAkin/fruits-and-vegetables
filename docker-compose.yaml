@@ -1,0 +1,39 @@
+networks:
+  roadsurfer:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: ./docker
+    image: tturkowski/fruits-and-vegetables
+    volumes:
+      - ./:/app
+    tty: true
+    ports:
+      - "8080:8080"
+    networks:
+      - roadsurfer
+
+  database:
+    image: percona/percona-server:8.4.0-aarch64
+    environment:
+      MYSQL_DATABASE: main
+      MYSQL_RANDOM_ROOT_PASSWORD: "true"
+      MYSQL_PASSWORD: main
+      MYSQL_USER: main
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+    networks:
+      - roadsurfer
+    ports:
+      - "3306:3306"
+
+volumes:
+  database_data:
