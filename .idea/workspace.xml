@@ -4,39 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97f1a114-0a2e-4524-934c-17c14c352172" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Collection/SearchableCollectionInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ProduceSearchController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DTO/Filter/AbstractFilter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DTO/Filter/FilterInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DTO/Filter/IdFilter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DTO/Filter/NameFilter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enum/FilterField.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Serializer/CollectionSerializer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Serializer/FilterDeserializer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Serializer/ProduceDeserializer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Serializer/ProduceSerializer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/CollectionSearchService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/CollectionStorageServiceInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ApplicationTests/AddingBlukProduceApplicationTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ApplicationTests/AddingNewProduceApplicationTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ApplicationTests/ListProduceApplicationTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ApplicationTests/RemoveProduceApplicationTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/UnitTests/Service/CollectionManagementServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/StorageService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/App/Service/StorageServiceTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
+    <list default="true" id="97f1a114-0a2e-4524-934c-17c14c352172" name="Changes" comment="First Time Box">
+      <change afterPath="$PROJECT_DIR$/src/Command/ProcessFileCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ErdemAkin"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ErdemAkin/fruits-and-vegetables.git",
+    "accountId": "f9bf0018-6f4a-4df8-992b-673067bb0437"
+  }
+}]]></component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
@@ -302,8 +284,17 @@
       <option name="presentableId" value="Default" />
       <updated>1728922111082</updated>
       <workItem from="1728922112160" duration="24450000" />
-      <workItem from="1729014667156" duration="17441000" />
+      <workItem from="1729014667156" duration="18313000" />
     </task>
+    <task id="LOCAL-00001" summary="First Time Box">
+      <option name="closed" value="true" />
+      <created>1729032190058</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729032190058</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,5 +310,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Time Box" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Time Box" />
   </component>
 </project>
