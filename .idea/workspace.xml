@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97f1a114-0a2e-4524-934c-17c14c352172" name="Changes" comment="First Time Box">
-      <change afterPath="$PROJECT_DIR$/src/Command/ProcessFileCommand.php" afterDir="false" />
+    <list default="true" id="97f1a114-0a2e-4524-934c-17c14c352172" name="Changes" comment="Second Time Box (First Part Only 2 Hours)">
+      <change afterPath="$PROJECT_DIR$/src/EventSubscriber/ExceptionSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exception/ItemAlreadyExistsException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exception/ProduceExceptionInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exception/UndefinedFilterException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CollectionManagementServiceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CollectionSearchServiceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ApplicationTests/SearchProduceApplicationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/IntegrationTests/Service/CollectionManagementServiceIntegrationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/ItemCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Collection/ItemCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/ProcessFileCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ProcessFileCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProduceManagementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProduceManagementController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProduceSearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProduceSearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Serializer/FilterDeserializer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serializer/FilterDeserializer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CollectionManagementService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CollectionManagementService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CollectionSearchService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CollectionSearchService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ApplicationTests/AddingBlukProduceApplicationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ApplicationTests/AddingBlukProduceApplicationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/UnitTests/Service/CollectionManagementServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/UnitTests/Service/CollectionManagementServiceTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +47,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ErdemAkin"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ErdemAkin&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ErdemAkin/fruits-and-vegetables.git",
-    "accountId": "f9bf0018-6f4a-4df8-992b-673067bb0437"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ErdemAkin/fruits-and-vegetables.git&quot;,
+    &quot;accountId&quot;: &quot;f9bf0018-6f4a-4df8-992b-673067bb0437&quot;
   }
-}]]></component>
+}</component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
@@ -156,11 +173,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Docker.docker-compose.yaml.redis: Compose Deployment.executor": "Run",
+    "PHPUnit.AddingBlukProduceApplicationTest.executor": "Run",
+    "PHPUnit.AddingBlukProduceApplicationTest.testExpectAddingBulkProduceWithEmptyPayload.executor": "Run",
+    "PHPUnit.AddingBlukProduceApplicationTest.testExpectAddingBulkProduceWithHappyFlow.executor": "Run",
     "PHPUnit.AddingBlukProduceFunctionalTest.executor": "Run",
     "PHPUnit.AddingListProduceFunctionalTest.executor": "Run",
     "PHPUnit.AddingNewProduceFunctionalTest.executor": "Run",
+    "PHPUnit.CollectionManagementServiceIntegrationTest.executor": "Run",
     "PHPUnit.CollectionManagementServiceTest.executor": "Run",
+    "PHPUnit.CollectionManagementServiceTest.testAddFunction.executor": "Run",
     "PHPUnit.RemoveProduceApplicationTest.executor": "Run",
+    "PHPUnit.SearchProduceApplicationTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "Docker Compose",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "Docker Compose",
@@ -189,36 +212,37 @@
       <recent name="$PROJECT_DIR$/app/docker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/UnitTests" />
       <recent name="$PROJECT_DIR$/docker" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.CollectionManagementServiceTest">
-    <configuration name="AddingBlukProduceFunctionalTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+  <component name="RunManager" selected="PHPUnit.AddingBlukProduceApplicationTest.testExpectAddingBulkProduceWithHappyFlow">
+    <configuration name="AddingBlukProduceApplicationTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="app" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="App\Tests\ApplicationTests\AddingBlukProduceFunctionalTest" configuration_file="/app/phpunit.xml.dist" file="$PROJECT_DIR$/tests/ApplicationTests/AddingBlukProduceApplicationTest.php" scope="Class" />
+      <TestRunner class="App\Tests\ApplicationTests\AddingBlukProduceApplicationTest" configuration_file="/app/phpunit.xml.dist" file="$PROJECT_DIR$/tests/ApplicationTests/AddingBlukProduceApplicationTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="AddingListProduceFunctionalTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="AddingBlukProduceApplicationTest.testExpectAddingBulkProduceWithHappyFlow" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="app" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="App\Tests\ApplicationTests\AddingListProduceFunctionalTest" configuration_file="/app/phpunit.xml.dist" file="$PROJECT_DIR$/tests/ApplicationTests/ListProduceApplicationTest.php" scope="Class" />
+      <TestRunner class="App\Tests\ApplicationTests\AddingBlukProduceApplicationTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/ApplicationTests/AddingBlukProduceApplicationTest.php" method="testExpectAddingBulkProduceWithHappyFlow" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="AddingNewProduceFunctionalTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="CollectionManagementServiceIntegrationTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="app" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="App\Tests\ApplicationTests\AddingNewProduceFunctionalTest" configuration_file="/app/phpunit.xml.dist" file="$PROJECT_DIR$/tests/ApplicationTests/AddingNewProduceApplicationTest.php" scope="Class" />
+      <TestRunner class="App\Tests\IntegrationTests\Service\CollectionManagementServiceIntegrationTest" configuration_file="/app/phpunit.xml.dist" file="$PROJECT_DIR$/tests/IntegrationTests/Service/CollectionManagementServiceIntegrationTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="CollectionManagementServiceTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -234,13 +258,13 @@
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="RemoveProduceApplicationTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="SearchProduceApplicationTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="app" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="App\Tests\ApplicationTests\RemoveProduceApplicationTest" configuration_file="/app/phpunit.xml.dist" file="$PROJECT_DIR$/tests/ApplicationTests/RemoveProduceApplicationTest.php" scope="Class" />
+      <TestRunner class="App\Tests\ApplicationTests\SearchProduceApplicationTest" configuration_file="/app/phpunit.xml.dist" file="$PROJECT_DIR$/tests/ApplicationTests/SearchProduceApplicationTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
@@ -251,19 +275,19 @@
     </configuration>
     <list>
       <item itemvalue="PHPUnit.Main" />
+      <item itemvalue="PHPUnit.AddingBlukProduceApplicationTest.testExpectAddingBulkProduceWithHappyFlow" />
+      <item itemvalue="PHPUnit.CollectionManagementServiceIntegrationTest" />
+      <item itemvalue="PHPUnit.SearchProduceApplicationTest" />
+      <item itemvalue="PHPUnit.AddingBlukProduceApplicationTest" />
       <item itemvalue="PHPUnit.CollectionManagementServiceTest" />
-      <item itemvalue="PHPUnit.RemoveProduceApplicationTest" />
-      <item itemvalue="PHPUnit.AddingListProduceFunctionalTest" />
-      <item itemvalue="PHPUnit.AddingBlukProduceFunctionalTest" />
-      <item itemvalue="PHPUnit.AddingNewProduceFunctionalTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.AddingBlukProduceApplicationTest.testExpectAddingBulkProduceWithHappyFlow" />
+        <item itemvalue="PHPUnit.CollectionManagementServiceIntegrationTest" />
         <item itemvalue="PHPUnit.CollectionManagementServiceTest" />
-        <item itemvalue="PHPUnit.RemoveProduceApplicationTest" />
-        <item itemvalue="PHPUnit.AddingListProduceFunctionalTest" />
-        <item itemvalue="PHPUnit.AddingNewProduceFunctionalTest" />
-        <item itemvalue="PHPUnit.AddingBlukProduceFunctionalTest" />
+        <item itemvalue="PHPUnit.SearchProduceApplicationTest" />
+        <item itemvalue="PHPUnit.AddingBlukProduceApplicationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +308,8 @@
       <option name="presentableId" value="Default" />
       <updated>1728922111082</updated>
       <workItem from="1728922112160" duration="24450000" />
-      <workItem from="1729014667156" duration="18313000" />
+      <workItem from="1729014667156" duration="19068000" />
+      <workItem from="1729271819976" duration="7357000" />
     </task>
     <task id="LOCAL-00001" summary="First Time Box">
       <option name="closed" value="true" />
@@ -294,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729032190058</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add command">
+      <option name="closed" value="true" />
+      <created>1729033061278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729033061278</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +346,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Time Box" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Time Box" />
+    <MESSAGE value="Add command" />
+    <MESSAGE value="Second Time Box (First Part Only 2 Hours)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second Time Box (First Part Only 2 Hours)" />
   </component>
 </project>

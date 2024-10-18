@@ -62,4 +62,19 @@ class AddingBlukProduceApplicationTest extends WebTestCase
         self::assertCount(3, $responseBody['fruit']);
         self::assertCount(2, $responseBody['vegetable']);
     }
+
+    public function testExpectAddingBulkProduceWithEmptyPayload(): void
+    {
+        $client = self::createClient();
+        $client->jsonRequest(
+            'POST',
+            '/bulk/'
+        );
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $responseBody = json_decode((string)$client->getResponse()->getContent(), true);
+        self::assertCount(2, $responseBody);
+        self::assertNull($responseBody['fruit']);
+        self::assertNull($responseBody['vegetable']);
+    }
 }

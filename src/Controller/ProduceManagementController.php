@@ -7,10 +7,10 @@ namespace App\Controller;
 use App\DTO\ProduceInterface;
 use App\Enum\ProduceType;
 use App\Enum\Unit;
+use App\Exception\ProduceExceptionInterface;
 use App\Serializer\ProduceSerializer;
-use App\Service\CollectionManagementService;
+use App\Service\CollectionManagementServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Exception\UnexpectedValueException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,12 +23,12 @@ class ProduceManagementController extends AbstractController
     #[Route('/add/', name: 'add_new_produce', methods: ['POST'])]
     public function insert(
         #[MapRequestPayload] ProduceInterface $produceInput,
-        CollectionManagementService $produceManagementService,
+        CollectionManagementServiceInterface $produceManagementService,
         SerializerInterface $serializer
     ): Response {
         try {
             $collection = $produceManagementService->add($produceInput);
-        } catch (UnexpectedValueException $exception) {
+        } catch (ProduceExceptionInterface $exception) {
             return new JsonResponse($exception->getMessage(), Response::HTTP_BAD_REQUEST, json: true);
         }
 
@@ -38,7 +38,7 @@ class ProduceManagementController extends AbstractController
     #[Route('/bulk/', name: 'add_bulk_produce', methods: ['POST'])]
     public function insertBulk(
         Request $request,
-        CollectionManagementService $produceManagementService,
+        CollectionManagementServiceInterface $produceManagementService,
         SerializerInterface $serializer,
     ): Response {
         $produces = $serializer->deserialize(
@@ -56,7 +56,7 @@ class ProduceManagementController extends AbstractController
     public function list(
         ProduceType $type,
         Request $request,
-        CollectionManagementService $produceManagementService,
+        CollectionManagementServiceInterface $produceManagementService,
         SerializerInterface $serializer
     ): Response {
         $collection = $produceManagementService->list($type);
@@ -80,7 +80,7 @@ class ProduceManagementController extends AbstractController
     public function remove(
         ProduceType $type,
         int $id,
-        CollectionManagementService $produceManagementService,
+        CollectionManagementServiceInterface $produceManagementService,
     ): Response {
         $produceManagementService->remove($type, $id);
 

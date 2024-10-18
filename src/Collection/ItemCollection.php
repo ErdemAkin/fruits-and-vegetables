@@ -6,19 +6,19 @@ namespace App\Collection;
 
 use App\DTO\Filter\FilterInterface;
 use App\DTO\ProduceInterface;
-use Symfony\Component\HttpFoundation\Exception\UnexpectedValueException;
+use App\Exception\ItemAlreadyExistsException;
 
 class ItemCollection implements SearchableCollectionInterface
 {
     protected array $items = [];
 
     /**
-     * @throws UnexpectedValueException
+     * @throws ItemAlreadyExistsException
      */
     public function add(ProduceInterface $item): void
     {
         if (isset($this->items[$item->getId()]) === true) {
-            throw new UnexpectedValueException('Item already exists.');
+            throw new ItemAlreadyExistsException();
         }
         $this->items[$item->getId()] = $item;
     }

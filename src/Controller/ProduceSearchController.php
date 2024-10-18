@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\DTO\Filter\FilterInterface;
-use App\Service\CollectionSearchService;
+use App\Service\CollectionSearchServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +18,7 @@ class ProduceSearchController extends AbstractController
     #[Route('/search/', name: 'search_produce', methods: ['POST'])]
     public function insert(
         #[MapRequestPayload] FilterInterface $filter,
-        CollectionSearchService $collectionSearchService,
+        CollectionSearchServiceInterface $collectionSearchService,
         SerializerInterface $serializer
     ): Response {
         $item = $collectionSearchService->search($filter);

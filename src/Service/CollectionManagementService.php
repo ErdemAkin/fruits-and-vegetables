@@ -7,10 +7,10 @@ namespace App\Service;
 use App\Collection\ItemCollectionInterface;
 use App\DTO\ProduceInterface;
 use App\Enum\ProduceType;
+use App\Exception\ItemAlreadyExistsException;
 use App\Factory\ProduceCollectionFactoryInterface;
-use Symfony\Component\HttpFoundation\Exception\UnexpectedValueException;
 
-final readonly class CollectionManagementService
+final readonly class CollectionManagementService implements CollectionManagementServiceInterface
 {
     public function __construct(
         private ProduceCollectionFactoryInterface $produceCollectionFactory,
@@ -19,7 +19,7 @@ final readonly class CollectionManagementService
     }
 
     /**
-     * @throws UnexpectedValueException
+     * @throws ItemAlreadyExistsException
      */
     public function add(ProduceInterface $input): ItemCollectionInterface
     {
@@ -37,23 +37,34 @@ final readonly class CollectionManagementService
      */
     public function addBulk(array $produces): array
     {
-        $fruitCollection = $this->produceCollectionFactory->generateCollection(ProduceType::FRUIT);
-        $vegetableCollection = $this->produceCollectionFactory->generateCollection(ProduceType::VEGETABLE);
+        $fruitCollection = null;
+        $vegetableCollection = null;
 
         foreach ($produces as $produce) {
             if ($produce->getType() === ProduceType::FRUIT) {
+                if ($fruitCollection === null) {
+                    $fruitCollection = $this->produceCollectionFactory->generateCollection(ProduceType::FRUIT);
+                }
                 $fruitCollection->add($produce);
             } else {
+                if ($vegetableCollection === null) {
+                    $vegetableCollection = $this->produceCollectionFactory->generateCollection(ProduceType::VEGETABLE);
+                }
                 $vegetableCollection->add($produce);
             }
         }
 
-        $this->collectionStorageService->update(ProduceType::FRUIT, $fruitCollection);
-        $this->collectionStorageService->update(ProduceType::VEGETABLE, $vegetableCollection);
+        if ($fruitCollection !== null) {
+            $this->collectionStorageService->update(ProduceType::FRUIT, $fruitCollection);
+        }
+
+        if ($vegetableCollection !== null) {
+            $this->collectionStorageService->update(ProduceType::VEGETABLE, $vegetableCollection);
+        }
 
         return [
             'fruit' => $fruitCollection,
-            'vegetable' => $vegetableCollection
+            'vegetable' => $vegetableCollection,
         ];
     }
 

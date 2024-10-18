@@ -6,12 +6,12 @@ namespace App\Service;
 
 use App\DTO\Filter\FilterInterface;
 use App\DTO\ProduceInterface;
-use App\Factory\ProduceCollectionFactory;
+use App\Factory\ProduceCollectionFactoryInterface;
 
-class CollectionSearchService
+final readonly class CollectionSearchService implements CollectionSearchServiceInterface
 {
     public function __construct(
-        private ProduceCollectionFactory $produceCollectionFactory,
+        private ProduceCollectionFactoryInterface $produceCollectionFactory,
     ) {
     }
 

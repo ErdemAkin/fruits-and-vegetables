@@ -8,7 +8,7 @@ use App\DTO\Filter\FilterInterface;
 use App\DTO\Filter\IdFilter;
 use App\DTO\Filter\NameFilter;
 use App\Enum\FilterField;
-use Symfony\Component\HttpFoundation\Exception\UnexpectedValueException;
+use App\Exception\UndefinedFilterException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 final readonly class FilterDeserializer implements DenormalizerInterface
@@ -20,6 +20,9 @@ final readonly class FilterDeserializer implements DenormalizerInterface
         ];
     }
 
+    /**
+     * @throws UndefinedFilterException
+     */
     public function denormalize(
         mixed $data,
         string $type,
@@ -29,7 +32,7 @@ final readonly class FilterDeserializer implements DenormalizerInterface
         $filter = match (FilterField::tryFrom($data['field'])) {
             FilterField::NAME => new NameFilter(),
             FilterField::ID => new IdFilter(),
-            default => throw new UnexpectedValueException('This filter is not valid'),
+            default => throw new UndefinedFilterException(),
         };
 
         $filter->setValue($data['value']);

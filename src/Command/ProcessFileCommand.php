@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\Service\CollectionManagementService;
+use App\Service\CollectionManagementServiceInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -13,11 +13,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
 #[AsCommand(name: 'app:create-collection')]
-class ProcessFileCommand extends Command
+final  class ProcessFileCommand extends Command
 {
     public function __construct(
-        private SerializerInterface $serializer,
-        private CollectionManagementService $collectionManagementService,
+        private readonly SerializerInterface $serializer,
+        private readonly CollectionManagementServiceInterface $collectionManagementService,
     ) {
         parent::__construct();
     }
